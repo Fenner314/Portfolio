@@ -10,18 +10,31 @@
     <section class="showcase">
         <header>
             <h2 class="title">Fenner Studios</h2>
+            <hr>
         </header>
 
-        <!-- <p class="sub-title">Fenner Studios</p> -->
+        <img id="sound" src="utilities/mute64-gray.png" width="48px" height="48px">
 
-        <video src="utilities/demo.mp4" width="500px" height="400px" muted loop autoplay></video>
+        <video id="video" src="utilities/demovid.mp4" width="500px" height="400px" muted loop autoplay></video>
 
         <div class="overlay"></div>
         
         <div class="sites">
-            <a href="#"><p class="musician">Music Studio</p></a>
-            <a href="dev/dev.html"><p class="developer">Web Development</p></a>
+            <div class="left-outer">
+                <div class="left-inner">
+                    <a href="#"><p class="musician">Music Studio</p></a>
+                </div>
+                <div class="circle-left"></div>
+            </div>
+            <div class="right-outer">
+                <div class="right-inner">
+                    <a href="dev/dev.html"><p class="developer">Web Development</p></a>
+                </div>
+                <div class="circle-right"></div>
+            </div>
         </div>
     </section>
+
+    <script src="landing.js"></script>
 </body>
 </html>
