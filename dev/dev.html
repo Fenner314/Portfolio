@@ -4,27 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="dev.css">
-    <title>Fenner Studios</title>
+    <link rel="icon" type="image/png" href="../utilities/favicon.png"/>
+    <title>Web Dev | Fenner Studios</title>
 </head>
 <body>
     <div class="container">
-
+        
         <nav class="nav">
 
             <ul class="nav-icons">
-                <li class="home-button">
+                <li class="home-button button">
                     <a href="#home"><img class="icon" id="home-icon" src="../utilities/home-icon.png"></a>
                     <p class="icon-text" id="home-text"><a href="#home">Home</a></p>
                 </li>
-                <li class="projects-button">
+                <li class="projects-button button">
                     <a href="#projects"><img class="icon" id="projects-icon" src="../utilities/projects-icon.png"></a>
                     <p class="icon-text" id="projects-text"><a href="#projects">Projects</a></p>
                 </li>
-                <li class="about-button">
+                <li class="about-button button">
                     <a href="#about"><img class="icon" id="about-icon" src="../utilities/about-icon.png"></a>
                     <p class="icon-text" id="about-text"><a href="#about">About</a></p>
                 </li>
-                <li class="contact-button">
+                <li class="contact-button button">
                     <a href="#contact"><img class="icon" id="contact-icon" src="../utilities/contact-icon.png"></a>
                     <p class="icon-text" id="contact-text"><a href="#contact">Contact</a></p>
                 </li>
@@ -43,7 +44,17 @@
 
         </nav>
 
-        <a href="../landing.html" class="logo">Fenner Studios</a>
+        <div class="pseudo-nav">
+             <a href="../landing.html" class="logo"><img width="170px" src="../utilities/logoName250.png"></a>
+            <a href="../landing.html" class="logo-small"><img width="67px" src="../utilities/logo250.png"></a>
+
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+       
 
         <div class="resume-button">
             <a href="../utilities/resume.pdf" download="FennerResume" target="_blank"><img id="resume-icon" src="../utilities/download-gray32.png" ></a>
@@ -73,38 +84,43 @@
 
         <section id="projects" class="section">
 
-            <img src="../utilities/light-gray.jpg"/>
-            <h1>My Projects</h1>
+            <div class="section-container">
+                <h1>My Projects</h1>
+            </div>
+            <!-- <img src="../utilities/light-gray.jpg"/> -->
+            <!-- <h1>My Projects</h1> -->
 
         </section>
 
         <section id="about" class="section">
 
-            <img src="../utilities/light-gray.jpg"/>
+            <!-- <img src="../utilities/light-gray.jpg"/> -->
+            <div class="section-container">
 
             <div class="about-grid">
 
                 <div class="about-heading">
-                    <h1>About Me</h1>
-                    <p class="medium-text about-subheading">My name is Jacob Fenner.</p>  
+                    <h1 class="section-title">About Me</h1>
+                    <p class="large-text about-subheading">I'm a front end developer who uses creative solutions to solve problems.</p>  
                 </div>
 
                 <div class="bio">
-                    <p class="small-text bold">I'm a front end developer available for full-time or freelance work to build your dream projects.</p> 
-                    <p class="small-text">I have two degrees in music; a bachelor's degree in music education and a master's degree in trombone 
-                        performance. I discovered my love for coding while finishing my master's degree and haven't looked back. I learned to code 
-                        through Codecademy courses and mentorship from a full stack developer. My love for coding was inspired by my passion for 
+                    <!-- <p class="small-text bold">I'm a front end developer available for full-time or freelance work to build your dream projects.</p>  -->
+                    <p class="small-text">I have two degrees in music, but I discovered my love for coding while finishing my master's degree and haven't looked back. 
+                        I learned to code through Codecademy courses and mentorship from a full stack developer. My love for coding was inspired by my passion for 
                         creating, and the skills I've developed throughout my life in music amplify my skills as a developer.</p>
                 </div>
 
                 <div class="sources">
                     <div class="center">
-                        <p class="small-text bold">How does being a musician make me a better developer?</p>
+                        <p class="medium-text bold">How does being a musician make me a better developer?</p>
                         <button class="source-button"><p>Click here!</p></button>
                     </div>
                 </div>
 
-            </div>    
+            </div>  
+            
+            </div>
 
         </section>
 
@@ -114,11 +130,12 @@
 
                 <div class="fixed-container">
                     <h1 class="contact-me">Contact Me</h1>
+                    <p>I'm interested in freelance opportunities and I'm currently available for full-time employment. Please fill out this contact form to reach me with any requests or questions.</p>
                 </div>
 
                 <form autocomplete="off">
                     <div class="small-box box-1">
-                        <input class="small form" id="left" type="text" placeholder="Name" name="name" required>
+                        <input class="small form" id="left" type="text" placeholder="Name" name="name" />
                         <span id="underline-1"></span>
                     </div>
                     <div class="small-box box-2">
@@ -154,7 +171,7 @@
         <div class="pop-up-body">
             <p class="one">I have an unparalleled work ethic from spending hours each day perfecting my instrument and my musicianship.</p>
             <p class="two">To perfect the music I play, I have developed analytical and methodical thinking as well as an innate attention to detail; skills that make the best programmers. </p>
-            <p class="three">Musical thinking is abstract and creative. Musicians are able to see the big picture while honing in on the small details to make it all work together. This kind of thinking is paramount in coding.</p>
+            <p class="three">Musical thinking is abstract and creative. I'm able to see the big picture while honing in on the small details to make it all work together. This kind of thinking is paramount in coding.</p>
             <p class="four">Music making is collaborative. As a skilled musician, I work great with others in any role I am given.</p>
             <p class="bottom">Don't believe me? Check out these sources!</p>
         </div>

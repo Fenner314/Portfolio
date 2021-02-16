@@ -1,3 +1,6 @@
+const tablet = window.matchMedia('(min-width: 600px) and (max-width: 1000px)');
+const mobile = window.matchMedia('(max-width: 600px)');
+
 //jQuery smooth scroll
 $('nav a').on('click', function(e) {
     if (this.hash !== '') {
@@ -37,7 +40,7 @@ const typeWriter = () => {
                 count++;
                 index = 0;
             }
-            setTimeout(type, 70);
+            setTimeout(type, 50);
         }())
     }
     const im = () => {
@@ -59,7 +62,7 @@ const typeWriter = () => {
                 count++;
                 index = 0;
             }
-            setTimeout(type, 70);
+            setTimeout(type, 50);
         }())
     }
     const jacob = () => {
@@ -81,7 +84,7 @@ const typeWriter = () => {
                 count++;
                 index = 0;
             }
-            setTimeout(type, 70);
+            setTimeout(type, 50);
         }())
     }
     const period = () => {
@@ -103,7 +106,7 @@ const typeWriter = () => {
                 count++;
                 index = 0;
             }
-            setTimeout(type, 70);
+            setTimeout(type, 50);
         }())
     }
     const dev = () => {
@@ -129,11 +132,34 @@ const typeWriter = () => {
         }())
     }
     hello();
-    setTimeout(im, 1000);
-    setTimeout(jacob, 1280);
-    setTimeout(period, 1630);
-    setTimeout(dev, 2280);
+    setTimeout(im, 800);
+    setTimeout(jacob, 1000);
+    setTimeout(period, 1250);
+    setTimeout(dev, 1800);
     
+}
+
+const logoChange = () => {
+    const logo = document.querySelector('.logo');
+    const logoSmall = document.querySelector('.logo-small');
+
+    const hideLogo = () => {
+        if (window.scrollY > 1) {
+            logo.classList.add('logo-change')
+            logoSmall.classList.add('logo-small-change');
+        } 
+        else if (window.scrollY < 1) {
+            setTimeout(() => { 
+                logo.classList.remove('logo-change');
+            }, 600); 
+            logoSmall.classList.remove('logo-small-change');
+
+        }
+        
+        
+    };
+
+    window.addEventListener('scroll', hideLogo);
 }
 
 const toggleDisplay = () => {
@@ -151,9 +177,9 @@ const toggleDisplay = () => {
             hello.style.display = 'flex';
         } 
 
-        if (window.scrollY > 1000) {
+        if (window.scrollY > 1150) {
             contact.style.display = 'flex';
-        } else if (window.scrollY < 1000) {
+        } else if (window.scrollY < 1150) {
             contact.style.display = 'none';
         }
     }
@@ -173,11 +199,6 @@ const sourceClick = () => {
     const overlay = document.querySelector('.overlay');
     const cancel = document.getElementById('cancel');
     const container = document.querySelector('.container')
-
-    console.log(popUp)
-    console.log(popUpButton)
-    console.log(overlay)
-    console.log(cancel)
 
     const popUpDisplay = () => {
         overlay.classList.add('overlay-active');
@@ -203,7 +224,7 @@ const sourceClick = () => {
         }
 
         setTimeout(invisible, 500);
-        container.style.pointerEvents = 'initial';
+        container.classList.remove('content-inactive');
         document.body.style.overflow = 'initial';
     }
 
@@ -374,11 +395,70 @@ const iconHover = () => {
 
 }
 
+const navBack = () => {
+    const topNav = document.querySelector('.pseudo-nav');
+
+    const navGray = () => {
+        if (window.scrollY > 0) {
+            topNav.classList.add('nav-gray');
+        } else {
+            topNav.classList.remove('nav-gray');
+        }
+    }
+
+    document.addEventListener('scroll', navGray)
+}
+
+const navSlide = () => {
+    const nav = document.querySelector('nav');
+    const burger = document.querySelector('.burger');
+    const topNav = document.querySelector('.pseudo-nav');
+    const icons = document.querySelectorAll('.button');
+
+    const burgerToggle = () => {
+        burger.classList.toggle('burger-toggle');
+    }
+
+    const slide = () => {
+        nav.classList.toggle('nav-toggle');
+
+        burgerToggle();
+    }
+
+    burger.addEventListener('click', slide);
+    home.addEventListener('click', slide);
+    icons.forEach( (icon) => {
+            icon.addEventListener('click', slide)
+        }
+    )
+
+}
+
 const app = () => {
-    setTimeout(typeWriter, 3300)
+    if (mobile.matches) {
+        setTimeout(typeWriter, 1500);
+    } else {
+        setTimeout(typeWriter, 2800);
+    }
+    window.addEventListener('load', () => {
+        if (mobile.matches) {
+            return;
+        } else {
+            logoChange();
+        }
+    });
+    window.addEventListener('resize', () => {
+        if (mobile.matches) {
+            return;
+        } else {
+            logoChange();
+        }
+    });
     toggleDisplay();
     sourceClick();
     iconHover();
+    navBack();
+    navSlide();
 }
 
 app();

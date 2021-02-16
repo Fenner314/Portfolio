@@ -4,36 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="landing.css">
+    <link rel="icon" type="image/png" href="utilities/favicon.png"/>
     <title>Fenner Studios</title>
 </head>
 <body>
+
+    <!-- <div class="loader full-screen">
+        <div class="load-container">
+            <p>Last minute coding...</p>
+            <div class="loading-bar">
+                <div class="line"></div>
+            </div>
+        </div>
+    </div> -->
+    <div class="loader full-screen">
+        <div class="load-container">
+            <p>Last minute coding...</p>
+            <div class="loading-container">
+                <img id="one" src="utilities/logoLeftPlain.png" width="150px"/>
+                <img id="two" src="utilities/logoMiddle.png" width="150px"/>
+                <img id="three" src="utilities/logoRightPlain.png" width="150px"/>
+            </div>
+        </div>
+    </div>
+
+    <video id="video" src="utilities/demovid.mp4" width="500px" height="400px" muted loop autoplay></video>
+
     <section class="showcase">
         <header>
-            <h2 class="title">Fenner Studios</h2>
+            <div class="title">
+                <img id="fenner" src="utilities/logoNameOnly.png" width="500px">
+            </div>
             <hr>
         </header>
 
-        <img id="sound" src="utilities/mute64-gray.png" width="48px" height="48px">
-
-        <video id="video" src="utilities/demovid.mp4" width="500px" height="400px" muted loop autoplay></video>
-
-        <div class="overlay"></div>
+        <img id="sound" src="utilities/mute64-gray.png" width="40px" height="40px">
         
-        <div class="sites">
-            <div class="left-outer">
-                <div class="left-inner">
-                    <a href="#"><p class="musician">Music Studio</p></a>
+        <div class="sites-container">
+            <div class="sites">
+                <div class="left-container">
+                    <img src="utilities/logoLeftPlain.png" width="150px" id="left">
+                    <a id="musician" href="#"><p class="musician">Music Studio</p></a> 
+                </div>     
+                <img src="utilities/logoMiddle.png" width="150px" id="middle">
+                <div class="right-container">
+                    <a id="developer" href="dev/dev.html"><p class="developer">Web Development</p></a>
+                    <img src="utilities/logoRightPlain.png" width="150px" id="right">
                 </div>
-                <div class="circle-left"></div>
             </div>
-            <div class="right-outer">
-                <div class="right-inner">
-                    <a href="dev/dev.html"><p class="developer">Web Development</p></a>
-                </div>
-                <div class="circle-right"></div>
-            </div>
+            
         </div>
     </section>
+
+    <div class="overlay full-screen"></div>
 
     <script src="landing.js"></script>
 </body>
