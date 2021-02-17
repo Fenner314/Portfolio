@@ -187,11 +187,27 @@ const toggleDisplay = () => {
     document.addEventListener('scroll', toggle)
 };
 
-function log() {
-    console.log(window.scrollY)
-}
+const projectView = () => {
+    const overlay = document.querySelectorAll('.project-overlay');
+    const project = document.querySelectorAll('.project');
+    const projectOne = document.querySelector('.project-1');
+    const buttonView = document.querySelectorAll('.view');
 
-window.addEventListener('scroll', log)
+    // projectOne.addEventListener('mouseover', () => {
+    //     overlayHere.style.backgroundColor = 'rgba(0, 0, 0, 0)'
+    // });
+
+    overlay.forEach((box) => {
+        box.addEventListener('mouseover', function(event) {
+            let target = event.target;
+            box.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+        })
+        box.addEventListener('mouseleave', function(event) {
+            let target = event.target;
+            box.style.backgroundColor = 'rgba(0, 0, 0, 0.4)'
+        })
+    })
+}
 
 const sourceClick = () => {
     const popUp = document.querySelector('.pop-up');
@@ -427,7 +443,7 @@ const navSlide = () => {
 
     burger.addEventListener('click', slide);
     home.addEventListener('click', slide);
-    icons.forEach( (icon) => {
+    icons.forEach((icon) => {
             icon.addEventListener('click', slide)
         }
     )
@@ -455,6 +471,7 @@ const app = () => {
         }
     });
     toggleDisplay();
+    projectView();
     sourceClick();
     iconHover();
     navBack();

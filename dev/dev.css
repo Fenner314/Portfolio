@@ -354,28 +354,122 @@ section#home {
     height: 110vh;
 }
 
-#projects img {
-    position: absolute; 
-    top: 100vh;
-    width: 80vw;
-    height: 100vh;
-    z-index: 2;
-    box-shadow: 1px 1px 10px 3px black;
-}
-
 .section-container {
     background-color: rgb(58, 58, 58);
     width: 80vw;
     height: 100vh;
     box-shadow: 1px 1px 10px 3px black;
     z-index: 10;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 4fr;
+    grid-gap: 3rem;
+    justify-content: center;
 }
 
 #projects h1 {
     z-index: 2;
     color: rgb(34, 185, 153);
     text-shadow: 1px 1px rgb(22, 22, 22);
+    width: 100%;
 }
+
+.project-container {
+    width: 100%;
+    height: 100%; 
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+.project {
+    border: 1px solid rgb(34, 185, 153);
+    background-size: 100%;
+    background-position: center center;
+    transition: background-size .5s;
+}
+.project-1 {
+    background-image: url(../utilities/cba.png);
+}
+.project:hover {
+    background-size: 110%;
+}
+.project-2 {
+    background-image: url(../utilities/cba.png);
+}
+.project-3 {
+    background-image: url(../utilities/cba.png);
+}
+.project-4 {
+    background-image: url(../utilities/cba.png);
+}
+
+.project-overlay {
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: background-color .3s ease-in-out;
+}
+
+.project-overlay:hover .view {
+    opacity: 1;
+}
+
+.view {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    top: 120px;
+    opacity: 0;
+
+    transition: opacity .3s ease-in-out;
+}
+
+.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.button-link {
+    height: 50px;
+    width: 100px;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    border: 2px solid rgb(34, 185, 153);
+    background-color: rgba(22, 22, 22, .7);
+    z-index: 1000;
+    position: relative;
+    overflow: hidden;
+    outline: none;
+
+    transition: color .3s;
+}
+.button-link:hover,
+.button-link:focus {
+    cursor: pointer;
+    outline: none;
+    color: black;
+}
+.button-link:before {
+    content: '';
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 180%;
+    height: 150%;
+    background-color: rgb(34, 185, 153);
+    z-index: -1;
+
+    transition: transform .5s ease-in-out;
+    transform: translate(-120%, 0) skew(-30deg);
+}
+.button-link:hover::before, 
+.button-link:focus::before {
+    transform: translate(-5%, 0)
+    skew(-15deg);
+}
+
 
 /*  ============
     About styles
