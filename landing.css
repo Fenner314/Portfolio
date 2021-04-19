@@ -32,28 +32,8 @@ video {
 }
 
 .showcase {
-    position: absolute;
-    right: 0;
-    width: 100%;
-    min-height: 100vh;
     color: white;
     overflow-y: hidden;
-
-    /* animation: scale-down .5s ease-in-out; */
-}
-
-.showcase header {
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    margin: auto;
-    width: 70%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    z-index: 10;
-    display: block;
-    text-align: center;
-    overflow: hidden;
 }
 
 /*  =========
@@ -195,8 +175,7 @@ video {
     position: absolute;
     left: 0; top: 0;
     width: 100vw;
-    height: 100vh;
-    z-index: 10000;
+    min-height: 100vh;
 }
 
 .loader {
@@ -208,9 +187,11 @@ video {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 10000;
 
     transition: transform 1s ease-in-out;
 }
+
 .load-container {
     height: 16vh;
     display: flex;
@@ -218,9 +199,9 @@ video {
     justify-content: space-around;
     align-items: center;
 }
-.loading-container {
+
+.gif {
     display: flex;
-    
 }
 
 #one {
@@ -243,51 +224,35 @@ video {
     animation: right 2s ease-in-out infinite;
 }
 
-.loading-bar {
-    width: 500px;
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.line {
-    width: 90%;
-    height: 1px;
-    background-color: rgb(104, 104, 104);
-    opacity: 1;
-    position: relative;
-}
-.line::after {
-    content: '';
-    width: 100%;
-    height: 1px;
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    margin: auto;
-    background-image: linear-gradient(to right, rgb(7, 205, 255), rgb(34, 185, 153));
-    opacity: 1;
-
-    animation: load 3s ease-in infinite;
-}
-
 .overlay {
     z-index: 10000;
     opacity: 0;
     visibility: hidden;
     background-color: rgb(34, 34, 34);
     pointer-events: all;
-
-    /* animation: overlay .5s ease-in-out; */
 }
 
 /*  =============
     Header Styles
     ============= */
 
+.showcase header {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    margin: auto;
+    width: 70%;
+    display: block;
+    text-align: center;
+    overflow: hidden;
+}    
+
 .title {
     margin-top: 40px;
+    padding: 5px;
+}
 
-    /* animation: title-load 1.5s 1s; */
+.title-load {
+    animation: title-load 1.5s 1s;
     animation-fill-mode: forwards;
     transform: translateY(100px);
 }
@@ -300,7 +265,12 @@ header hr {
     left: -100%; right: 0; bottom: 0;
     margin: auto;
 
-    /* animation: bar-load .7s ease-in .1s; */
+    animation-fill-mode: forwards;
+    width: 0;
+}
+
+.hr-load {
+    animation: bar-load .7s ease-in .1s;
     animation-fill-mode: forwards;
     width: 0;
 }
@@ -309,8 +279,8 @@ header hr {
     z-index: 2000;
     position: absolute;
     right: 40px; top: 40px;
-
-}#sound:hover {
+}
+#sound:hover {
     cursor: pointer;
 }
 
@@ -319,7 +289,6 @@ header hr {
     ============ */
 
 .sites-container {
-    font-size: 30px;
     font-weight: 400;
     font-family: 'Proza Libre', sans-serif;
     font-style: italic;
@@ -328,9 +297,9 @@ header hr {
     justify-content: center;
 }
 .sites {
+    font-size: 1.875rem;
     position: absolute;
-    top: 50%;
-    transform: translateY(-30%);
+    top: 35%;
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -341,7 +310,6 @@ header hr {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
 .musician {
@@ -349,6 +317,9 @@ header hr {
 
     animation: sites-load .5s ease-in-out 4.5s;
     animation-fill-mode: forwards;
+}
+.music-load {
+
 }
 .developer {
     opacity: 0;
@@ -391,13 +362,9 @@ header hr {
         padding: 0;
         margin: -90px;
     }
-
     .sites {
         transform: translateY(-30%);
         display: flex;
-    }
-
-    .sites {
         flex-direction: column;
         top: 50%;
         font-size: 1.4rem;
@@ -411,7 +378,6 @@ header hr {
         transform: translateX(22%);
         height: 50px;
     }
-    
 }
 
 @media only screen and (max-width: 500px) {
@@ -423,18 +389,9 @@ header hr {
         top: 20px;
         right: 20px;
     }
-
     #fenner {
         margin: -50px;
     }
-    
-
-    .sites {
-        transform: translateY(-30%);
-        display: flex;
-    }
-    
-
     .sites {
         flex-direction: column;
         top: 50%;
@@ -443,13 +400,10 @@ header hr {
     }
     .left-container {
         transform: translateX(-25%);
-        height: 50px;
     }
     .right-container {
         transform: translateX(14%);
-        height: 50px;
     }
-    
 }
 
 

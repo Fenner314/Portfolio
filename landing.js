@@ -15,7 +15,7 @@ const click = () => {
         }
         vid.muted = !vid.muted;
     } else {
-        sound.src = 'utilities/mute64-gray.png';
+        sound.src = 'utilities/mute64-red.png';
         if (mobile.matches) {
             sound.style.right = '20px';
         } else {
@@ -33,21 +33,11 @@ const loading = () => {
     const dev = document.querySelector('.right-outer');
 
     const loadContent = () => {
-        line.style.animation = 'bar-load .7s ease-in .1s';
-        line.style.animationFillMode = 'forwards';
-        line.style.width = 0;
-        title.style.animation = 'title-load 1.5s 1s';
-        title.style.animationFillMode = 'forwards';
-        title.style.transform = 'translateY(100px)';
-        music.style.animation = 'sites-load 1s ease-in-out 3s';
-        music.style.animationFillMode = 'forwards';
-        music.style.opacity = 0;
-        dev.style.animation = 'sites-load 1s ease-in-out 4s';
-        dev.style.animationFillMode = 'forwards';
-        dev.style.opacity = 0;
+        line.classList.add('hr-load');
+        title.classList.add('title-load');
     }
 
-    window.addEventListener('load', function() {
+    window.addEventListener('load', () => {
         setTimeout(() => {
             loader.style.transform = 'translateX(100%)';
         }, 1700);

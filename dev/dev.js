@@ -192,6 +192,7 @@ const projectView = () => {
     const project = document.querySelectorAll('.project');
     const projectOne = document.querySelector('.project-1');
     const buttonView = document.querySelectorAll('.view');
+    const descriptions = document.querySelectorAll('.description');
 
     // projectOne.addEventListener('mouseover', () => {
     //     overlayHere.style.backgroundColor = 'rgba(0, 0, 0, 0)'
