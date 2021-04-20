@@ -15,6 +15,7 @@ $('nav a').on('click', function(e) {
     }
 });
 
+//Home page text animation
 const typeWriter = () => {
     let count = 0;
     let index = 0;
@@ -139,6 +140,7 @@ const typeWriter = () => {
     
 }
 
+//Logo scroll animation 
 const logoChange = () => {
     const logo = document.querySelector('.logo');
     const logoSmall = document.querySelector('.logo-small');
@@ -162,6 +164,7 @@ const logoChange = () => {
     window.addEventListener('scroll', hideLogo);
 }
 
+//Toggle between home page and contact page being visible on scroll
 const toggleDisplay = () => {
     const hello = document.querySelector('.home-container');
     const contact = document.querySelector('.contact-container');
@@ -177,9 +180,9 @@ const toggleDisplay = () => {
             hello.style.display = 'flex';
         } 
 
-        if (window.scrollY > 1150) {
+        if (window.scrollY > 1230) {
             contact.style.display = 'flex';
-        } else if (window.scrollY < 1150) {
+        } else if (window.scrollY < 1230) {
             contact.style.display = 'none';
         }
     }
@@ -187,32 +190,34 @@ const toggleDisplay = () => {
     document.addEventListener('scroll', toggle)
 };
 
-const projectView = () => {
-    const overlay = document.querySelectorAll('.project-overlay');
-    const project = document.querySelectorAll('.project');
-    const projectOne = document.querySelector('.project-1');
-    const buttonView = document.querySelectorAll('.view');
-    const descriptions = document.querySelectorAll('.description');
+//Show project details on hover
+// const projectView = () => {
+//     const overlay = document.querySelectorAll('.project-overlay');
+//     const project = document.querySelectorAll('.project');
+//     const projectOne = document.querySelector('.project-1');
+//     const buttonView = document.querySelectorAll('.view');
+//     const descriptions = document.querySelectorAll('.description');
 
-    // projectOne.addEventListener('mouseover', () => {
-    //     overlayHere.style.backgroundColor = 'rgba(0, 0, 0, 0)'
-    // });
+//     // projectOne.addEventListener('mouseover', () => {
+//     //     overlayHere.style.backgroundColor = 'rgba(0, 0, 0, 0)'
+//     // });
 
-    overlay.forEach((box) => {
-        box.addEventListener('mouseover', function(event) {
-            let target = event.target;
-            box.style.backgroundColor = 'rgba(0, 0, 0, 0)';
-        })
-        box.addEventListener('mouseleave', function(event) {
-            let target = event.target;
-            box.style.backgroundColor = 'rgba(0, 0, 0, 0.4)'
-        })
-    })
-}
+//     overlay.forEach((box) => {
+//         box.addEventListener('mouseover', function(event) {
+//             let target = event.target;
+//             box.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+//         })
+//         box.addEventListener('mouseleave', function(event) {
+//             let target = event.target;
+//             box.style.backgroundColor = 'rgba(0, 0, 0, 0.4)'
+//         })
+//     })
+// }
 
+//Display popup on button click
 const sourceClick = () => {
     const popUp = document.querySelector('.pop-up');
-    const popUpButton = document.querySelector('.source-button');
+    const popUpButton = document.querySelector('.popup-button');
     const overlay = document.querySelector('.overlay');
     const cancel = document.getElementById('cancel');
     const container = document.querySelector('.container')
@@ -252,7 +257,9 @@ const sourceClick = () => {
     overlay.addEventListener('click', cancelPopUp);
 }
 
+//Toggle icon and text on hover
 const iconHover = () => {
+    console.log('hello')
     const homeHover = () => {
 
         const button = document.querySelector('.home-button');
@@ -412,6 +419,7 @@ const iconHover = () => {
 
 }
 
+//Add navigation bar with menu on small screen. Nav links appear below
 const navBack = () => {
     const topNav = document.querySelector('.pseudo-nav');
 
@@ -426,6 +434,7 @@ const navBack = () => {
     document.addEventListener('scroll', navGray)
 }
 
+//Navigation bar slide in on click
 const navSlide = () => {
     const nav = document.querySelector('nav');
     const burger = document.querySelector('.burger');
@@ -451,6 +460,7 @@ const navSlide = () => {
 
 }
 
+//Calls all functions
 const app = () => {
     if (mobile.matches) {
         setTimeout(typeWriter, 1500);
