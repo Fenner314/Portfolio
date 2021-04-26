@@ -1,19 +1,24 @@
 const vid = document.getElementById('video');
+const audio = document.getElementById('audio');
 const sound = document.getElementById('sound');
 const tablet = window.matchMedia('(min-width: 501px) and (max-width: 1000px)');
 const mobile = window.matchMedia('(max-width: 500px)');
+const musician = document.getElementById('musician');
+const developer = document.getElementById('developer');
+const left = document.getElementById('left');
+const right = document.getElementById('right');
+const constructionDiv = document.querySelector('.construction');
+const overlay = document.querySelector('.overlay');
 
-console.log(vid.muted);
-
-const click = () => {
-    if (vid.muted) {
+const audioToggle = () => {
+    if (audio.muted) {
         sound.src = 'utilities/volume64-green.png';
         if (mobile.matches) {
             sound.style.right = '19px';
         } else {
             sound.style.right = '39px';
         }
-        vid.muted = !vid.muted;
+        audio.muted = !audio.muted;
     } else {
         sound.src = 'utilities/mute64-red.png';
         if (mobile.matches) {
@@ -21,7 +26,7 @@ const click = () => {
         } else {
             sound.style.right = '40px';
         }
-        vid.muted = !vid.muted;
+        audio.muted = !audio.muted;
     }
 }
 
@@ -46,11 +51,6 @@ const loading = () => {
 };
 
 const arrowHover = () => {
-    const musician = document.getElementById('musician');
-    const developer = document.getElementById('developer');
-    const left = document.getElementById('left');
-    const right = document.getElementById('right');
-
     const leftMouseover = () => {
         left.classList.add('left-arrow-hover'); 
     }
@@ -68,6 +68,20 @@ const arrowHover = () => {
     musician.addEventListener('mouseout', leftMouseout);
     developer.addEventListener('mouseover', rightMouseover);
     developer.addEventListener('mouseout', rightMouseout);
+}
+
+const underConstruction = () => {
+    const revealMessage = () => {
+        constructionDiv.classList.remove('invisible')
+        overlay.classList.remove('invisible')
+    }
+    const hideMessage = () => {
+        constructionDiv.classList.add('invisible')
+        overlay.classList.add('invisible')
+    }
+
+    musician.addEventListener('click', revealMessage);
+    overlay.addEventListener('click', hideMessage);
 }
 
 const mobileResize = () => {
@@ -127,7 +141,8 @@ const mobileResize = () => {
 const app = () => {
     arrowHover();
     loading();
-    sound.addEventListener('click', click);
+    sound.addEventListener('click', audioToggle);
+    underConstruction();
     mobileResize();
 }
 

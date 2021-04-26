@@ -15,6 +15,17 @@ $('nav a').on('click', function(e) {
     }
 });
 
+//Phase out loading animation 
+const loading = () => {
+    const loader = document.querySelector('.loader');
+
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            loader.style.transform = 'translateX(100%)';
+        }, 3500);
+    })
+}
+
 //Home page text animation
 const typeWriter = () => {
     let count = 0;
@@ -185,34 +196,24 @@ const toggleDisplay = () => {
         } else if (window.scrollY < 1230) {
             contact.style.display = 'none';
         }
+
+        // if (mobile.matches) {
+        //     if (window.scrollY > 1600) {
+        //         contact.style.display = 'flex';
+        //     } else if (window.scrollY < 1600) {
+        //         contact.style.display = 'none';
+        //     }
+        // } else {
+        //      if (window.scrollY > 1230) {
+        //         contact.style.display = 'flex';
+        //     } else if (window.scrollY < 1230) {
+        //         contact.style.display = 'none';
+        //     }
+        // }
     }
 
     document.addEventListener('scroll', toggle)
 };
-
-//Show project details on hover
-// const projectView = () => {
-//     const overlay = document.querySelectorAll('.project-overlay');
-//     const project = document.querySelectorAll('.project');
-//     const projectOne = document.querySelector('.project-1');
-//     const buttonView = document.querySelectorAll('.view');
-//     const descriptions = document.querySelectorAll('.description');
-
-//     // projectOne.addEventListener('mouseover', () => {
-//     //     overlayHere.style.backgroundColor = 'rgba(0, 0, 0, 0)'
-//     // });
-
-//     overlay.forEach((box) => {
-//         box.addEventListener('mouseover', function(event) {
-//             let target = event.target;
-//             box.style.backgroundColor = 'rgba(0, 0, 0, 0)';
-//         })
-//         box.addEventListener('mouseleave', function(event) {
-//             let target = event.target;
-//             box.style.backgroundColor = 'rgba(0, 0, 0, 0.4)'
-//         })
-//     })
-// }
 
 //Display popup on button click
 const sourceClick = () => {
@@ -416,7 +417,6 @@ const iconHover = () => {
     githubHover();
     linkedinHover();
     resumeHover();
-
 }
 
 //Add navigation bar with menu on small screen. Nav links appear below
@@ -462,10 +462,11 @@ const navSlide = () => {
 
 //Calls all functions
 const app = () => {
+    loading();
     if (mobile.matches) {
-        setTimeout(typeWriter, 1500);
+        setTimeout(typeWriter, 4300);
     } else {
-        setTimeout(typeWriter, 2800);
+        setTimeout(typeWriter, 5800);
     }
     window.addEventListener('load', () => {
         if (mobile.matches) {
@@ -482,7 +483,6 @@ const app = () => {
         }
     });
     toggleDisplay();
-    projectView();
     sourceClick();
     iconHover();
     navBack();

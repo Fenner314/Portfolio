@@ -10,7 +10,18 @@
     <title>Web Dev | Fenner Studios</title>
 </head>
 <body>
+    <div class="loader full-screen">
+        <div class="load-container">
+            <p>Last minute coding...</p>
+            <div class="gif">
+                <img id="one" src="../utilities/logoLeftPlain.png" width="150px"/>
+                <img id="two" src="../utilities/logoMiddle.png" width="150px"/>
+                <img id="three" src="../utilities/logoRightPlain.png" width="150px"/>
+            </div>
+        </div>
+    </div>
     <div class="container">
+
         
         <nav class="nav">
 
@@ -60,7 +71,7 @@
 
         <div class="resume-button">
             <a href="../utilities/resume.pdf" download="FennerResume" target="_blank"><img id="resume-icon" src="../utilities/download-gray32.png" ></a>
-            <p class="icon-text" id="resume-text"><a href="../utilities/resume.pdf" download="FennerResume" target="_blank">Resume</a></p>
+            <p class="icon-text" id="resume-text"><a href="../utilities/Jacob_Fenner_Resume_Dev.PDF" download="FennerResume" target="_blank">Resume</a></p>
         </div>
 
         <section id="home" class="section">
@@ -93,7 +104,7 @@
                     
                     <div class="about-heading">
                         <h1 class="section-title">About Me</h1>
-                        <p class="large-text about-subheading">I'm a front end developer who finds creative solutions to problems. I specialize in React.js.</p>  
+                        <p class="large-text about-subheading">I'm a front end developer who finds creative solutions to problems.</p>  
                     </div>
 
                     <div class="about-info">
@@ -160,14 +171,10 @@
                     <div class="project project-1">
                         <div class="project-overlay">
                             <p class="project-title">Jonathan Tang Music</p>
-                            <!-- <p class="description">Jonathan Tang Music</p> -->
                             <p class="project-info">My first project; a static portfolio for professional musician, Jonathan Tang. I used html, css, and javascript, as well as a calendly integration to schedule private lessons and curator.io to embed his social media posts.</p>
-                            <!-- <p class="description">A static portfolio for professional musician, Jonathan Tang. I used html, css, and javascript, as well as a calendly integration to schedule private lessons and curator.io to embed his social media posts.</p> -->
                             <div class="project-links">
                                 <a href="https://jonathantangmusic.netlify.app/" target="_blank">Live Project</a>
-                                <!-- <a href="https://jonathantangmusic.netlify.app/" target="_blank"><button class="button-link">Live Project</button></a> -->
                                 <a href="https://github.com/Fenner314/JonathanTangMusic" target="_blank">View Code</a>
-                                <!-- <a href="https://github.com/Fenner314/JonathanTangMusic" target="_blank"><button class="button-link">View Code</button></a> -->
                             </div>
                         </div>
                     </div>
@@ -175,47 +182,33 @@
                         <div class="project-overlay">
                             <p class="project-title">Checkers</p>
                             <p class="project-info">A simple game of checkers created with an html table, css, and javascript. The javascript file features a long function chain that is called for every turn to determine the piece clicked, where it can go, if it took out any pieces, and checks for when the game is won.</p>
-                            <!-- <p class="description">Checkers</p>
-                            <p class="description">A simple game of checkers created with an html table, css, and javascript. The javascript file features a long chain function that is called for every turn to determine the piece clicked, where it can go, if it took out any pieces, and checks for when the game is won.</p> -->
                             <div class="project-links">
                                 <a href="https://fennercheckers.netlify.app/" target="_blank">Live Project</a>
                                 <a href="https://github.com/Fenner314/checkers" target="_blank">View Code</a>
-                                <!-- <a href="https://fennercheckers.netlify.app/" target="_blank"><button class="button-link">Live Project</button></a>
-                                <a href="https://github.com/Fenner314/checkers" target="_blank"><button class="button-link" >View Code</button></a> -->
                             </div>
                         </div>
                     </div>
                     <div class="project project-3">
                         <div class="project-overlay">
                             <p class="project-title">Artsmith Adornments</p>
-                            <!-- <p class="description">Artsmith Adornments</p> -->
                             <p class="project-info">A jewelry E-Commerce website that I created with React.js. I use hooks to handle rendering items, getting their details, and adding items to the shopping cart. I mostly used custom css, but I used Bootstrap for a few things. I handle user authentication with Firebase.</p>
-                            <!-- <p class="description">A jewelry E-Commerce website that I created with React.js. I use hooks to handle rendering items, getting their details, and adding items to the shopping cart. I mostly used custom css, but I used Bootstrap for a few things. I handle user authentication with Firebase.</p> -->
                             <div class="project-links">
                                 <a href="http://artsmithadornments.surge.sh/" target="_blank">Live Project</a>
                                 <a href="https://github.com/Fenner314/Artsmith-Adornments" target="_blank">View Code</a>
-                                <!-- <a href="http://artsmithadornments.surge.sh/" target="_blank"><button class="button-link" >Live Project</button></a>
-                                <a href="https://github.com/Fenner314/Artsmith-Adornments" target="_blank"><button class="button-link" >View Code</button></a> -->
                             </div>
                         </div>
                     </div>
                     <div class="project project-4">
                         <div class="project-overlay">
                             <p class="project-title">My Portfolio</p>
-                            <p class="project-info">I created my own portfolio with basic html, css, and javascript. All of the css animations are custom, as is the design. </p>
-                            <!-- <p class="description">My Portfolio</p>
-                            <p class="description">I created my own portfolio with html, css, and javascript. All of the css animations are custom, as is the design. </p> -->
+                            <p class="project-info">I created my own portfolio with basic html, css, and javascript. All of the css animations are custom, as is the design. I used a short snippet of JQuery to achieve the smooth scrolling effect.</p>
                             <div class="project-links">
                                 <a href="#">View Code</a>
-                                <!-- <a href="#"><button class="button-link" target="_blank">Live Project</button></a>
-                                <a href="#"><button class="button-link" target="_blank">View Code</button></a> -->
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- <img src="../utilities/light-gray.jpg"/> -->
-            <!-- <h1>My Projects</h1> -->
 
         </section>
 
@@ -229,7 +222,7 @@
                 </div>
 
                 <form autocomplete="off">
-                    <div class="small-box box-1">
+                    <div class="small-box box-1 input">
                         <input class="small form" id="left" type="text" placeholder="Name" name="name" />
                         <span id="underline-1"></span>
                     </div>
@@ -246,7 +239,14 @@
                         <span id="underline-4"></span>
                     </div>
                     <!-- <input class="send form" type="submit" value="Send" > -->
-                    <button class="send form" type="submit" value="Send" >Send</button>
+                    <!-- <button class="send form" type="submit" value="Send" >Send</button> -->
+                    <button class="button-container form-button" type="submit">
+                        <div class="button-inner">
+                            <span class="button-bg"></span>
+                            <span class="button-base"></span>
+                            <span class="button-text">Send</span>
+                        </div>
+                    </button>
                 </form>
 
                 <p class="copy">Jacob Fenner &copy2021</p>
