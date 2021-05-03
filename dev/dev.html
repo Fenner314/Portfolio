@@ -58,8 +58,8 @@
         </nav>
 
         <div class="pseudo-nav">
-             <a href="../landing.html" class="logo"><img width="170px" src="../utilities/logoName250.png"></a>
-            <a href="../landing.html" class="logo-small"><img width="67px" src="../utilities/logo250.png"></a>
+             <a href="../index.html" class="logo"><img width="170px" src="../utilities/logoName250.png"></a>
+            <a href="../index.html" class="logo-small"><img width="67px" src="../utilities/logo250.png"></a>
 
             <div class="burger">
                 <div class="line1"></div>
@@ -221,7 +221,7 @@
                     <p>I'm interested in freelance opportunities and I'm currently available for full-time employment. Please fill out this contact form to reach me with any requests or questions.</p>
                 </div>
 
-                <form autocomplete="off">
+                <form id="contactForm" action="mailto:fennerstudios@gmail.com" method="POST" autocomplete="off">
                     <div class="small-box box-1 input">
                         <input class="small form" id="left" type="text" placeholder="Name" name="name" />
                         <span id="underline-1"></span>
@@ -240,13 +240,14 @@
                     </div>
                     <!-- <input class="send form" type="submit" value="Send" > -->
                     <!-- <button class="send form" type="submit" value="Send" >Send</button> -->
-                    <button class="button-container form-button" type="submit">
+                    <button class="button-container form-button" id="sendMessage" type="submit">
                         <div class="button-inner">
                             <span class="button-bg"></span>
                             <span class="button-base"></span>
                             <span class="button-text">Send</span>
                         </div>
                     </button>
+                    <p class="copy" id="mobile-copy">Jacob Fenner &copy2021</p>
                 </form>
 
                 <p class="copy">Jacob Fenner &copy2021</p>

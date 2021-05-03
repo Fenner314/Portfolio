@@ -15,6 +15,27 @@ $('nav a').on('click', function(e) {
     }
 });
 
+const sendMessage = () => {
+    const name = document.getElementById('left')
+    const email = document.getElementById('right')
+    const subject = document.getElementById('subject')
+    const text = document.getElementById('message')
+    let message = '';
+    
+    $('#sendMessage').on('click', function() {
+        message = $('#contactForm').serialize();
+        $.ajax({
+            url: 'https://formspree.io/f/mdoyakgq',
+            method: 'POST',
+            data: {message: message},
+            dataType: 'json'
+        });
+        alert('Email sent');
+        return false;
+    })
+    console.log(typeof name.value)
+}
+
 //Phase out loading animation 
 const loading = () => {
     const loader = document.querySelector('.loader');
@@ -23,6 +44,9 @@ const loading = () => {
         setTimeout(() => {
             loader.style.transform = 'translateX(100%)';
         }, 3500);
+        setTimeout(() => {
+            loader.parentNode.removeChild(loader)
+        }, 6000);
     })
 }
 
@@ -460,6 +484,10 @@ const navSlide = () => {
 
 }
 
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+}  
+
 //Calls all functions
 const app = () => {
     loading();
@@ -487,6 +515,7 @@ const app = () => {
     iconHover();
     navBack();
     navSlide();
+    sendMessage();
 }
 
 app();

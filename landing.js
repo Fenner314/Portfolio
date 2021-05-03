@@ -10,6 +10,13 @@ const right = document.getElementById('right');
 const constructionDiv = document.querySelector('.construction');
 const overlay = document.querySelector('.overlay');
 
+const autoplayAudio = () => {
+    window.addEventListener('load', () => {
+        audio.play();
+        console.log(audio.autoplay)
+    })
+}
+
 const audioToggle = () => {
     if (audio.muted) {
         sound.src = 'utilities/volume64-green.png';
@@ -47,6 +54,9 @@ const loading = () => {
             loader.style.transform = 'translateX(100%)';
         }, 1700);
         setTimeout(loadContent, 2000);
+        setTimeout(() => {
+            loader.parentNode.removeChild(loader);
+        }, 3000);
     });
 };
 
@@ -139,6 +149,7 @@ const mobileResize = () => {
 }
 
 const app = () => {
+    // autoplayAudio();
     arrowHover();
     loading();
     sound.addEventListener('click', audioToggle);
@@ -147,4 +158,3 @@ const app = () => {
 }
 
 app();
-
